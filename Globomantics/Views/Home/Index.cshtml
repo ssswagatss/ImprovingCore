@@ -9,27 +9,9 @@
         <div class="col-md-4">
             <h3>CD Rates</h3>
             <p class="lead">The Longer you Save, the More You Earn</p>
-
-            @foreach (var cd in Model.CDRates)
-            {
-                <div class="meter">
-                    <p>@cd.Title</p>
-                    <div class="progress">
-                        @if (cd.TermLength == CDTermLength.Months12)
-                        {
-                            <div class="progress-bar bg-info" style="width: 50%">@cd.Value%</div>
-                        }
-                        else if (cd.TermLength == CDTermLength.Months18)
-                        {
-                            <div class="progress-bar bg-info" style="width: 75%">@cd.Value%</div>
-                        }
-                        else if (cd.TermLength == CDTermLength.Months24)
-                        {
-                            <div class="progress-bar bg-info" style="width: 100%">@cd.Value%</div>
-                        }
-                    </div>
-                </div>
-            }
+            <cdrate title="12 Months" term-length="Months12" meter-percentage="50"></cdrate>
+            <cdrate title="18 Months" term-length="Months18" meter-percentage="75"></cdrate>
+            <cdrate title="24 Months" term-length="Months24" meter-percentage="100"></cdrate>
         </div>
         <div class="col-md-4">
             <div class="card">
